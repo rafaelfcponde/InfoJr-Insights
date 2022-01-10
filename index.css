@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root{
+    --header-height: 80px;
+}
+
+/*--------------------------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: unset;
+    color: unset;
+}
+
+a.fake-button{
+    display: block;
+}
+
+/*--------------------------------------------------*/
+
+header{
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    background: #191919;
+}
+
+header .wrapper{
+    height: var(--header-height);
+    margin: 0 calc(calc(345 / 1920) * 100vw); /*is 345px when screen-width 1920px, scales proportionally when not*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    width: 123px;
+    height: 50px;
+    font-size: 0;
+    background-image: url(images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+}
+
+header #menu-toggle{
+    display: none;
+}
+
+header #menu-icon{
+    display: none;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+}
+
+header nav li{
+    padding: 0 calc(calc(15 / 1920) * 100vw);  /*is 15px when screen-width 1920px, scales proportionally when not*/
+    color: #FFFFFF80;
+}
+
+header nav li .active{
+    font-weight: 700;
+    color: #7CB124;
+}
+
+header .fake-button{
+    padding: 11px 24px;
+    border-radius: 8px;
+    background-color: #7CB124;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+}
+
+div#header-slot{
+    height: var(--header-height);
+}
+
+/*--------------------------------------------------*/
+
+@media (max-width: 768px){
+
+    :root{
+        --header-height: 68px;
+    }
+
+    header .logo{
+        width: 61px;
+        height: 25px;
+    }
+
+    header #nav-container{
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: #1A1C1799;
+    }
+
+    header #nav-list{
+        background: #252822;
+        width: 283px;
+        height: 300px;
+        margin: 0 auto;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    header #menu-icon{
+        display: unset;
+    }
+
+    header #close-menu{
+        display: none;
+    }
+
+    header #menu-toggle:checked ~ #menu-icon #open-menu{
+        display: none;
+    }
+
+    header #menu-toggle:checked ~ #menu-icon #close-menu{
+        display: unset;
+    }
+
+    header #menu-toggle:checked ~ #nav-container{
+        display: unset;
+    }
+
+}
