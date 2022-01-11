@@ -25,6 +25,18 @@
         display: block;
     }
 
+    a.logo{
+        display: block;
+    }
+
+    address{
+        font-style: unset;
+    }
+
+    div.wrapper{
+        margin: 0 calc(calc(345 / 1920) * 100vw); /*is 345px when screen-width 1920px, scales proportionally when not*/
+    }
+
 /*--------------------------------------------------*/
 
     header{
@@ -36,13 +48,12 @@
 
     header .wrapper{
         height: var(--header-height);
-        margin: 0 calc(calc(345 / 1920) * 100vw); /*is 345px when screen-width 1920px, scales proportionally when not*/
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    header #logo{
+    header #infojr-header{
         width: 123px;
         height: 50px;
         font-size: 0;
@@ -92,13 +103,121 @@
 
 /*--------------------------------------------------*/
 
+    footer #social-media{
+        background: #252822;
+    }
+
+    footer #social-media .wrapper{
+        height: 240px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer #infojr-footer{
+        width: 220px;
+        height: 90px;
+        font-size: 0;
+        background-image: url(images/logo.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left center;
+    }
+
+    footer #social-media ul{
+        display: flex;
+        gap: calc(calc(25 / 1920) * 100vw);  /*is 25px when screen-width 1920px, scales proportionally when not*/
+    }
+
+    footer #social-media ul a{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #7CB124;
+        font-size: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-size: 32px 32px;
+    }
+
+    footer #social-media #linkedin{
+        background-image: url(images/socials/linkedin-in-brands.svg);
+    }
+
+    footer #social-media #behance{
+        background-image: url(images/socials/behance-brands.svg);
+    }
+
+    footer #social-media #dribbble{
+        background-image: url(images/socials/dribbble-brands.svg);
+    }
+
+    footer #social-media #instagram{
+        background-image: url(images/socials/instagram-brands.svg);
+    }
+
+    footer #social-media #facebook{
+        background-image: url(images/socials/facebook-f-brands.svg);
+    }
+
+    footer #social-media #youtube{
+        background-image: url(images/socials/youtube-brands.svg);
+    }
+
+    footer #social-media #spotify{
+        background-image: url(images/socials/spotify-brands.svg);
+    }
+
+    footer address{
+        background: #191919;
+        color: white;
+        padding: 30px 0;
+    }
+
+    footer address p{
+        width: fit-content;
+        margin: 0 auto;
+        line-height: 32px;
+    }
+
+/*--------------------------------------------------*/
+
+@media (max-width: 1024px){
+
+    footer #infojr-footer{
+        width: 138px;
+        height: 57px;
+    }
+    
+    footer #social-media .wrapper{
+        height: unset;
+        flex-direction: column;
+        gap: 32px;
+        padding: 54px 0;
+    }
+
+    footer #social-media ul{
+        gap: calc(500px / 33);
+    }
+
+    footer #social-media ul a{
+        width: calc(300px / 11);
+        height: calc(300px / 11);
+        background-size: calc(640px / 33) calc(640px / 33);
+    }
+
+}
+
+/*--------------------------------------------------*/
+
 @media (max-width: 768px){
 
     :root{
         --header-height: 68px;
     }
 
-    header #logo{
+    header #infojr-header{
         width: 61px;
         height: 25px;
     }
